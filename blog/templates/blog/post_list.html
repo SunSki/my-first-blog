@@ -1,0 +1,18 @@
+{% for post in posts %}
+    {{ post }}
+{% endfor %}
+
+<body>
+    <div>
+        <h1>Django List</h1>
+    </div>
+    
+    {% for post in posts %}
+        <hr>
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+</body>
