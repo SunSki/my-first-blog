@@ -11,7 +11,12 @@
         {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         {% endif %}
+
         <h1><a href="/">Django Wired Blog</a></h1>
+
+        <div>
+            <a href="{% url 'text_generate' %}">Net Biz Recruit words generater</a>
+        </div>
     </div>
     
     <div class="content container">
