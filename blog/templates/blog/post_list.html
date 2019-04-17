@@ -1,18 +1,15 @@
-{% for post in posts %}
-    {{ post }}
-{% endfor %}
+{% extends 'blog/base.html' %}
 
-<body>
-    <div>
-        <h1>Django List</h1>
-    </div>
-    
+{% block content %}
     {% for post in posts %}
-        <hr>
-        <div>
-            <p>published: {{ post.published_date }}</p>
-            <h1>{{ post.title }}</h1>
+        <div class="post">
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
+            </div>
+            <!-- urls.pyのname='post_detail'へ -->
+            <!-- post.pkのpkは自動的に割り振られるid -->
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
-</body>
+{% endblock %}
