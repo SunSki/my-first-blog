@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h1>New Post</h1>
+    <form method="POST" class="post-form">
+
+        <!-- クロスサイトリクエストフォージェリを防ぐためのダミーinputタグ生成 -->
+        {% csrf_token %}
+
+        <!-- .as_p: 各フォームをpタグで表示 -->
+        {{ form.as_p }}
+
+        <button type="submit" class="save btn btn-default">Save</button>
+        
+    </form>
+{% endblock %}
