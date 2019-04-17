@@ -8,8 +8,7 @@ from .generate_text import generate_text
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte = timezone.now()).order_by('-published_date')
-    text_list = generate_text(5)
-    return render(request, 'blog/post_list.html', {'posts':posts, 'text_list':text_list}) #postsをrender先に渡す
+    return render(request, 'blog/post_list.html', {'posts':posts}) #postsをrender先に渡す
 
 def post_detail(request, pk):
     # Postモデルのpkが一致するものを取得
@@ -53,6 +52,6 @@ def post_new(request):
 ###### views for tool ########
 
 
-#def txtGen(request):
-    # text_list = generate_text(5)
-    # return render(request, 'blog/text_generate.html', {'text_list':text_list})
+def txtGen(request):
+    text_list = generate_text(5)
+    return render(request, 'blog/text_generate.html', {'text_list':text_list})
