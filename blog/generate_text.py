@@ -2,7 +2,7 @@ from django.conf import settings
 import markovify
 
 def generate_text(sentence_num):
-    path = '/blog/templates/tool/splitted_text.txt'
+    path = '/blog/templates/blog/splitted_text.txt'
     splitted_text = ''
     sentence_list = []
 
