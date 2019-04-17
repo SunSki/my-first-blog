@@ -45,3 +45,12 @@ def post_new(request):
         form = PostForm()
 
     return render(request, 'blog/post_edit.html', {'form':form})
+
+
+
+###### views for tool ########
+from .generate_text import generate_text
+
+def text_generate(request):
+    text_list = generate_text(3)
+    return render(request, 'tool/text_generate.html', {'text_list':text_list})
