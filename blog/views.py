@@ -52,6 +52,6 @@ def post_new(request):
 ###### views for tool ########
 
 
-def text_generate(request):
+def txtGen(request):
     text_list = generate_text(5)
     return render(request, 'blog/text_generate.html', {'text_list':text_list})
