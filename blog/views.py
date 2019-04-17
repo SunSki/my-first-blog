@@ -52,5 +52,6 @@ def post_new(request):
 from .generate_text import generate_text
 
 def text_generate(request):
-    text_list = generate_text(5)
-    return render(request, 'tool/text_generate.html', {'text_list':text_list})
+    # text_list = generate_text(5)
+    # return render(request, 'tool/text_generate.html', {'text_list':text_list})
+    return render(request, 'tool/text_generate.html')
