@@ -14,15 +14,14 @@
     }
 }
 
+@media (min-width: 748px){
+    .container {
+        max-width: 736px;
+    }
+}
 
 .txtGen {
     padding-top: 48px;
-
-    @media (min-width: 736px){
-        container {
-            max-width: 736px;
-        }
-    }
 
     &_title{
         padding: 32px;

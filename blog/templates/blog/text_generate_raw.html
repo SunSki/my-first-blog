@@ -18,6 +18,21 @@
                 copyButton.parentNode.insertBefore(div, copyButton.nextSibling);
             }
         </script> -->
+        <style>
+            li{
+                padding: 12px;
+            }
+
+            .container{
+                font-size: 32px;
+            }
+
+            @media (min-width: 748px){
+                .container {
+                    max-width: 736px;
+                }
+            }
+        </style>
     </head>
     
     <nav class="navbar navbar-default">
@@ -31,7 +46,7 @@
         </div>
     </nav>
     
-    <div style="padding:32px;">
+    <div class="container">
         <div>以下のサイトの文字をまとめ、MeCabで形態素解析した文章から生成しています。</div>
         <ul>
             <li><a href="https://yoshi-muneko.blogspot.com/p/twitter.html">脱・マンネリ生活</a></li>
@@ -45,11 +60,11 @@
         </div>
     </div>
     
-    <div style="padding: 16px;">
+    <!-- <div style="padding: 16px;">
         <div>以下が元文章</div>
         <div id="copyTarget">
             <object data="{% sass_src 'text/splitted_text.txt' %}" type="text/plain" width="100%" height="100%"></object>
         </div>
-    </div>
+    </div> -->
 
 </html>
