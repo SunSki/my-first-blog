@@ -1,12 +1,63 @@
+{% load sass_tags %}
+
 <html>
     <head>
-
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% sass_src 'scss/txtGen.scss' %}" >
     </head>
 
     <body>
-        <h1>text_generate</h1>
-        {% for text in text_list %}
-            <div>・{{ text }}</div>
-        {% endfor %}
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./">お金に縛られない自由な働き方</a>
+                </div>
+                <div>
+                    <a class="navbar-text navbar-right" href="./raw">このサイトについて</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container txtGen">
+
+            <a href="./">
+            <div class="txtGen_title">お金に縛られず<br>自由な働き方をするGenerater</div>
+            </a>
+            
+
+            <div>
+                <img src = "{{ img_url }}" class="txtGen_img">
+            </div>
+
+            <div class="txtGen_contents">
+                {% for text in text_list %}
+                    <div class="txtGen_contents_item">
+                        {{ text }}
+                    </div>
+                {% endfor %}
+            </div>
+                
+            <div class="txtGen_footer">
+                <hr>
+                <div>
+                    お金に縛られずに自由な働き方ができる文言は<a href="./raw">こちらの文章</a>から、アクセスごとに自動生成されています。
+                </div>
+            </div>
+
+        </div>
     </body>
+
+    <script>
+        section = document.getElementsByClassName('txtGen_contents_item');
+        len = section.length;
+        for(var i=0; i<len; i++){
+            random = Math.random();
+            console.log(random);
+            if(random<0.3){
+                section[i].classList.add('red');
+            }
+        }
+    </script>
+
 </html>

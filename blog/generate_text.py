@@ -1,10 +1,12 @@
+import random
 from django.conf import settings
 import markovify
 
-def generate_text(sentence_num):
+def generate_text():
     path = '/blog/static/text/splitted_text.txt'
     splitted_text = ''
     sentence_list = []
+    sentence_num = random.randint(6,12)
 
     with open( settings.BASE_DIR + path, 'r' ) as f:
         splitted_text = f.read()
